@@ -2,8 +2,8 @@
 <!-- You can try the XML diff/merge tool XmlDiffPatchSF (located in this repo) to make upgrading your base configurations to the latest version much easier. -->
 <ApplicationManifest xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ApplicationTypeName="FabricObserverType" ApplicationTypeVersion="3.3.1" xmlns="http://schemas.microsoft.com/2011/01/fabric">
   <Parameters>
-    <!-- ObserverManager Configuration -->
     <!-- FO's Observer loop will sleep for at least 30s, regardless of this setting. So, setting to 0 to 29 would mean FO will sleep for 30 seconds between observer loop iterations. -->
+    <!-- ObserverManager Configuration -->
     <Parameter Name="ObserverManagerObserverLoopSleepTimeSeconds" DefaultValue="60" />
     <!-- Increase this value if you monitoring a large number of services and can't do so (or don't want to) concurrently (See AppObserverEnableConcurrentMonitoring setting). -->
     <Parameter Name="ObserverManagerObserverExecutionTimeoutSeconds" DefaultValue="3600" />
@@ -13,7 +13,7 @@
          Supported values are Error, Warning, Ok or None. -->
     <Parameter Name="ObserverManagerObserverFailureHealthStateLevel" DefaultValue="Warning" />
     <!-- Provide a full path including drive letter or just the name of a directory, which will then map to your system drive (typically, C: on Windows). -->
-    <Parameter Name="ObserverLogPath" DefaultValue="fabric_observer_logs" />
+    <Parameter Name="ObserverLogPath" DefaultValue="c:\fabric_observer_logs" />
     <!-- We would really appreciate it if you kept this set to true. The information we collect contains no PII and helps us understand how FO is doing in the wild. 
          NOTE: This setting is unrelated to Observer Telemetry, which you configure further down. -->
     <Parameter Name="ObserverManagerEnableOperationalFOTelemetry" DefaultValue="true" />
@@ -25,8 +25,8 @@
     <Parameter Name="ObserverManagerETWProviderName" DefaultValue="" />
     <!-- Set this parameter to true if you want FO to emit a health event letting you know if there is a new version of FO available. Otherwise, set this to false. -->
     <Parameter Name="ObserverManagerCheckGithubVersion" DefaultValue="true" />
-    <!-- If you want FO to transmit telemetry data events to ApplicationInsights or LogAnalytics, for example, then enable this setting. Otherwise, set this to false. -->
     <!-- Observer Telemetry -->
+    <!-- If you want FO to transmit telemetry data events to ApplicationInsights or LogAnalytics, for example, then enable this setting. Otherwise, set this to false. -->
     <Parameter Name="ObserverManagerEnableTelemetryProvider" DefaultValue="true" />
     <!-- Telemetry Provider - Supported values are AzureApplicationInsights and AzureLogAnalytics. -->
     <Parameter Name="TelemetryProvider" DefaultValue="AzureApplicationInsights" />
@@ -79,7 +79,7 @@
     <Parameter Name="AppObserverEnableCSVDataLogging" DefaultValue="false" />
     <Parameter Name="ContainerObserverEnableCSVDataLogging" DefaultValue="false" />
     <Parameter Name="FabricSystemObserverEnableCSVDataLogging" DefaultValue="false" />
-    <Parameter Name="NodeObserverEnableCSVDataLogging" DefaultValue="false" />
+    <Parameter Name="NodeObserverEnableCSVDataLogging" DefaultValue="true" />
     <!-- Observer Verbose Logging -->
     <Parameter Name="AppObserverEnableVerboseLogging" DefaultValue="false" />
     <Parameter Name="AzureStorageUploadObserverEnableVerboseLogging" DefaultValue="false" />
@@ -88,7 +88,7 @@
     <Parameter Name="DiskObserverEnableVerboseLogging" DefaultValue="false" />
     <Parameter Name="FabricSystemObserverEnableVerboseLogging" DefaultValue="false" />
     <Parameter Name="NetworkObserverEnableVerboseLogging" DefaultValue="false" />
-    <Parameter Name="NodeObserverEnableVerboseLogging" DefaultValue="false" />
+    <Parameter Name="NodeObserverEnableVerboseLogging" DefaultValue="true" />
     <Parameter Name="OSObserverEnableVerboseLogging" DefaultValue="false" />
     <!-- Observer CPU Monitor Durations (TimeSpan format, e.g., 00:00:00): How long an observer should monitor CPU usage per target (process or machine).
          NOTE: If AppObserver is configured to monitor service processes concurrently, then any value greater than 5 seconds is ignored as 5 seconds CPU monitor duration will be the maximum executed value. 
