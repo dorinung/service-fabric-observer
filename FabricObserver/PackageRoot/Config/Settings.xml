@@ -350,6 +350,10 @@
 	<Parameter Name="EnableVerboseLogging" Value="true" MustOverride="false" />
 	<Parameter Name="EnableCSVDataLogging" Value="true" MustOverride="false" />
 </Section>
+  <Section Name="NodeSnapshotWatchdogConfiguration">
+    <Parameter Name="EnableVerboseLogging" Value="true" MustOverride="false" />
+    <Parameter Name="EnableCSVDataLogging" Value="true" MustOverride="false" />
+  </Section>
   <Section Name="OSObserverConfiguration">
     <Parameter Name="Enabled" Value="" MustOverride="true" />
     <Parameter Name="EnableTelemetry" Value="" MustOverride="true" />
