@@ -349,7 +349,8 @@
   <Section Name="NodeSnapshotWatchdogConfiguration">
     <Parameter Name="EnableVerboseLogging" Value="true" MustOverride="false" />
     <Parameter Name="EnableCSVDataLogging" Value="true" MustOverride="false" />
-	<Parameter Name="EnableARNCalls" Value="false" MustOverride="false" />
+	<Parameter Name="EnableARNCalls" Value="true" MustOverride="false" />
+	<Parameter Name="ARNMinimalIntervalTimeSeconds" Value="45" MustOverride="false" />
 	<Parameter Name="RunInterval" Value="00:00:25" />
   </Section>
   <Section Name="OSObserverConfiguration">

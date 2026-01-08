@@ -13,7 +13,7 @@
          Supported values are Error, Warning, Ok or None. -->
     <Parameter Name="ObserverManagerObserverFailureHealthStateLevel" DefaultValue="Warning" />
     <!-- Provide a full path including drive letter or just the name of a directory, which will then map to your system drive (typically, C: on Windows). -->
-    <Parameter Name="ObserverLogPath" DefaultValue="c:\fabric_observer_logs" />
+    <Parameter Name="ObserverLogPath" DefaultValue="fabric_observer_logs" />
     <!-- We would really appreciate it if you kept this set to true. The information we collect contains no PII and helps us understand how FO is doing in the wild. 
          NOTE: This setting is unrelated to Observer Telemetry, which you configure further down. -->
     <Parameter Name="ObserverManagerEnableOperationalFOTelemetry" DefaultValue="true" />
